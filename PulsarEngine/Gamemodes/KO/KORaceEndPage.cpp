@@ -14,12 +14,18 @@ void RaceEndPage::OnActivate() {
     this->countdown.SetInitial(10.0f);
     this->countdown.isActive = true;
     this->countdownControl.AnimateCurrentCountDown();
+    this->frameCounter = 0;
 }
 
 void RaceEndPage::BeforeControlUpdate() {
     this->countdown.Update();
     this->countdownControl.AnimateCurrentCountDown();
-    if(this->duration == 10 * 60) this->OnButtonClick(this->buttons[0], 0);
+
+    this->frameCounter++;
+    if (this->frameCounter >= 600) {
+        this->OnButtonClick(this->buttons[0], 0);
+        this->frameCounter = 0;
+    }
 }
 
 int RaceEndPage::GetMessageBMG() const {
@@ -29,7 +35,7 @@ u32 RaceEndPage::GetButtonCount() const {
     return buttonCount;
 }
 const u32* RaceEndPage::GetVariantsIdxArray() const {
-    static const u32 array[buttonCount] ={ 0,1 }; //corresponds to 3 buttons centered on the screen
+    static const u32 array[buttonCount] = {0, 1};  // corresponds to 3 buttons centered on the screen
     /*names:
     ButtonContinue = Spectate
     ButtonQuit = Quit
@@ -40,14 +46,13 @@ bool RaceEndPage::IsPausePage() const { return false; }
 const char* RaceEndPage::GetButtonsBRCTRName() const { return "KORaceEnd"; }
 
 void RaceEndPage::OnButtonClick(PushButton& button, u32 hudSlotId) {
-
     this->EndStateAnimated(0, button.GetAnimationFrameSize());
-    switch(button.buttonId) {
-        case 0: //Spectate
+    switch (button.buttonId) {
+        case 0:  // Spectate
             System::sInstance->koMgr->isSpectating = true;
             break;
-        case 1: //Quit
-            const Mgr * mgr = System::sInstance->koMgr;
+        case 1:  // Quit
+            const Mgr* mgr = System::sInstance->koMgr;
             const u8 localCount = mgr->GetBaseLocalPlayerCount();
             const SectionId next = localCount == 1 ? SECTION_P1_WIFI : SECTION_P2_WIFI;
             SectionMgr::sInstance->sectionParams->localPlayerCount = localCount;
@@ -57,6 +62,5 @@ void RaceEndPage::OnButtonClick(PushButton& button, u32 hudSlotId) {
     }
 }
 
-
-}//namespace KO
-}//namespace Pulsar
+}  // namespace KO
+}  // namespace Pulsar

@@ -83,7 +83,7 @@ void CtrlRaceSpeedo::OnUpdate() {
     u32 dot = digits >= 1 ? 11 : 10;
     u32 tenths = digits >= 1 ? speedValue % 1000 / 100 : 10;
     u32 hundredths = digits >= 2 ? speedValue % 100 / 10 : 10;
-    u32 thousandths = digits == 3 ? speedValue % 100 / 10 : 10;
+    u32 thousandths = digits == 3 ? speedValue % 10 / 1 : 10;
 
     if(speedValue < 10000) { //shift everything by 2 to the left
         hundreds = units;

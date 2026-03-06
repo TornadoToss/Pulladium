@@ -541,7 +541,8 @@ public class PulsarGame
         public ushort cupIconCount;
         [Endian(Endianness.BigEndian)]
         public byte chooseNextTrackTimer;
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 40)]
+		public byte hasLegacy200ccMaxSpeed;
+		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 39)]
         public byte[] reservedSpace;
     }
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1)]

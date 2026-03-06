@@ -528,5 +528,10 @@ namespace Pulsar_Pack_Creator
             return true;
 
         }
-    }
+
+		private void Legacy200Speed_Unchecked(object sender, RoutedEventArgs e)
+		{
+
+		}
+	}
 }

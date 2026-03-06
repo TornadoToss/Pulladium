@@ -34,6 +34,7 @@
     <None Remove="Resources\mkwiiBG.png" />
     <None Remove="Resources\Pulsar.ico" />
     <None Remove="Resources\space.jpg" />
+	<None Remove="Resources\moonview.png" />
     <None Remove="Resources\transparent.png" />
   </ItemGroup>
 
@@ -52,6 +53,7 @@
   <ItemGroup>
     <Resource Include="Resources\mkwiiBG.png" />
     <Resource Include="Resources\space.jpg" />
+	<Resource Include="Resources\moonview.png" />
     <Resource Include="Resources\transparent.png" />
   </ItemGroup>
 

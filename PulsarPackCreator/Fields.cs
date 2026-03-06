@@ -81,7 +81,7 @@ namespace Pulsar_Pack_Creator
                 new UIElement[]{ File4, Name4, Author4, Version4, Slot4, Music4, Variants4}};
 
             string version = (Assembly.GetExecutingAssembly().GetCustomAttribute(typeof(AssemblyInformationalVersionAttribute)) as AssemblyInformationalVersionAttribute).InformationalVersion.ToString();
-            Title = "Pulsar Pack Creator " + version;
+            Title = "Pulladium Pack Creator " + version;
 
             TrackBlocking.ItemsSource = blockingValues;
             TrackBlocking.SelectedValue = blockingValues[0];

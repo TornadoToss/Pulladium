@@ -15,6 +15,7 @@ namespace Pulsar_Pack_Creator
             public byte regsMode = 0;
             public bool hasTTTrophies = false;
             public bool has200cc = false;
+            public bool hasLegacy200ccMaxSpeed = false;
             public bool hasUMTs = false;
             public bool hasFeather = false;
             public bool hasMegaTC = false;
@@ -96,10 +97,20 @@ namespace Pulsar_Pack_Creator
                 parameters.has200cc = !parameters.has200cc;
                 if (parameters.has200cc) CC100Label.Text = "% 200cc";
                 else CC100Label.Text = "% 100cc";
+
+				Legacy200StackPanel.Visibility = parameters.has200cc ? Visibility.Visible : Visibility.Collapsed;
             }
         }
 
-        private void OnUMTToggle(object sender, RoutedEventArgs e)
+		private void OnLegacy200Toggle(object sender, RoutedEventArgs e)
+        {
+			if ((sender as CheckBox).IsKeyboardFocused)
+			{
+				parameters.hasLegacy200ccMaxSpeed = !parameters.hasLegacy200ccMaxSpeed;
+			}
+		}
+
+		private void OnUMTToggle(object sender, RoutedEventArgs e)
         {
             if ((sender as CheckBox).IsKeyboardFocused)
             {

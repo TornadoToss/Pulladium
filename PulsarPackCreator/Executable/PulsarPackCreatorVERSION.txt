@@ -1,3 +1,22 @@
+·Updated to 2.1
+Welcome to Pulladium!
+
+Creator Changes:
+-"Build Config Only" option now no longer erases pack folder
+-Added Moonview theme option
+-Added legacy 200cc max speed option (see engine changes)
+
+Engine Changes:
+-Saucy: Fixed issues with tracks containing LEX files causing them to not work properly
+-BlueLeopard: Fixed an issue causing 200cc's max speed to be higher than intended
+	-If this causes issues with ghost desyncs, you may enable the "legacy 200cc max speed" option in the pack creator to revert this change
+-ym: Fixed an issue where the race count in a friend room wouldn't be updated
+-Saucy: Fixed the Mii head setting not working as intended
+-Saucy: Fixed Mega TC showing in the roulette in vanilla worldwides
+-Blazico: Fixed speedometer thousandths digit calculation
+-Saucy: Fixed the vanilla track order when playing worldwides
+-ZPL: Fixed many bugs and stability issues with KO mode
+
 ·Updated to 2.0.1
 Remaining bugs (if you get them, PLEASE report how it happened):
 -At the end of a KO with HAW, Miis are sometimes wrong.

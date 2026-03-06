@@ -119,4 +119,6 @@
 	kmWrite16(address, (instruction & 0xFFFF00) >> 0x8); \
 	kmWrite8(address + 0x2, instruction & 0xFF);
 
+#define kmWriteNop(addr) kmWrite32(addr, 0x60000000)
+
 #endif

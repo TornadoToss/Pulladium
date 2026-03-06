@@ -25,6 +25,7 @@ class ConfigFile;
 enum Context {
     PULSAR_CT = 0,
     PULSAR_200,
+    PULSAR_LEGACY_200_MAX_SPEED,
     PULSAR_FEATHER,
     PULSAR_UMTS,
     PULSAR_MEGATC,
@@ -32,6 +33,7 @@ enum Context {
     PULSAR_MIIHEADS,
     PULSAR_MODE_OTT,
     PULSAR_MODE_KO,
+    PULSAR_KOFINAL,
     PULSAR_CONTEXT_COUNT,
 };
 

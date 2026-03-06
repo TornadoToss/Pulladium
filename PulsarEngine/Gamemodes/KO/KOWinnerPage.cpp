@@ -4,20 +4,20 @@
 #include <Gamemodes/KO/KOMgr.hpp>
 #include <Network/PacketExpansion.hpp>
 
-
 namespace Pulsar {
 namespace KO {
 
 WinnerPage::WinnerPage() {
     status = WAITING_STATS;
     timeRecvStats = 0;
+    duration = 0;
     onClickHandler.subject = this;
     onClickHandler.ptmf = &WinnerPage::HandleClick;
 }
 
 void WinnerPage::OnInit() {
     this->InitControlGroup(6);
-    for(int i = 0; i < 3; ++i) {
+    for (int i = 0; i < 3; ++i) {
         LayoutUIControl& stats = this->stats[i];
         this->AddControl(i, stats, 0);
         ControlLoader loader(&stats);
@@ -27,12 +27,10 @@ void WinnerPage::OnInit() {
         stats.isHidden = true;
     }
 
-
     this->AddControl(3, this->miiAndName, 0);
     ControlLoader loaderMii(&this->miiAndName);
     loaderMii.Load(UI::raceFolder, "ko_winner", "ko_winner", 0);
     this->miiAndName.isHidden = true;
-
 
     this->AddControl(4, this->titleText, 0);
     ControlLoader loader(&this->titleText);
@@ -45,7 +43,6 @@ void WinnerPage::OnInit() {
 
     this->manipulator.Init(1, false);
     this->SetManipulatorManager(manipulator);
-
 }
 
 void WinnerPage::OnDeactivate() {
@@ -70,22 +67,26 @@ void WinnerPage::DisplayWinner() {
 }
 
 void WinnerPage::AfterControlUpdate() {
-    if(this->status == WAITING_STATS) {
+    const u32 maxDuration = 600;
+    this->duration++;
+
+    if (this->status == WAITING_STATS) {
         const Mgr* mgr = System::sInstance->koMgr;
         RKNet::Controller* controller = RKNet::Controller::sInstance;
         const RKNet::ControllerSub& sub = controller->subs[controller->currentSub];
         const u8 winnerAid = controller->aidsBelongingToPlayerIds[mgr->winnerPlayerId];
         const Mgr::Stats::Final* finalStats;
-        if(sub.localAid == winnerAid) finalStats = &mgr->stats[0].final;
+        if (sub.localAid == winnerAid)
+            finalStats = &mgr->stats[0].final;
         else {
             const Network::PulRH1* dest = controller->GetReceivedPacketHolder<Network::PulRH1>(winnerAid)->packet;
             finalStats = reinterpret_cast<const Mgr::Stats::Final*>(&dest->timeInDanger);
         }
-        if(finalStats->finalPercentageSum != 0) {
+        if (finalStats->finalPercentageSum != 0) {
             this->status = HAS_STATS;
             this->timeRecvStats = this->duration;
 
-            for(int i = 0; i < 3; ++i) {
+            for (int i = 0; i < 3; ++i) {
                 this->stats[i].isHidden = false;
                 this->stats[i].SetTextBoxMessage("menu_text", UI::BMG_KO_AVERAGE_PERCENT_TITLE + i);
             }
@@ -108,24 +109,24 @@ void WinnerPage::AfterControlUpdate() {
 
             this->DisplayWinner();
         }
-
     }
 
     const u32 duration = this->duration;
-    if(status == HAS_STATS && duration - timeRecvStats == 600) {
+    if (status == HAS_STATS && duration - timeRecvStats == 600) {
         this->EndStateAnimated(0, 0.0f);
-    }
-    else if(status == WAITING_STATS) {
-        if(duration == 600) {
+    } else if (status == WAITING_STATS) {
+        if (duration == 600) {
             status = NO_STATS_TIME_ELAPSED;
             this->DisplayWinner();
         }
+    } else if (status == NO_STATS_TIME_ELAPSED) {
+        if (duration == 900) this->EndStateAnimated(0, 0.0f);
     }
-    else if(status == NO_STATS_TIME_ELAPSED) {
-        if(duration == 900) this->EndStateAnimated(0, 0.0f);
+
+    if (duration >= maxDuration) {
+        this->EndStateAnimated(0, 0.0f);
     }
 }
-
 
 void WinnerPage::HandleClick(u32 hudSlotId) {
     this->EndStateAnimated(0, 0.0f);
@@ -133,10 +134,10 @@ void WinnerPage::HandleClick(u32 hudSlotId) {
 
 static PageId LoadCorrectPageAfterOnlineLdb(PageId ret) {
     const System* system = System::sInstance;
-    if(system->IsContext(PULSAR_MODE_KO) && system->koMgr->winnerPlayerId != 0xFF) ret = static_cast<PageId>(WinnerPage::id);
+    if (system->IsContext(PULSAR_MODE_KO) && system->koMgr->winnerPlayerId != 0xFF) ret = static_cast<PageId>(WinnerPage::id);
     return ret;
 }
 kmBranch(0x8085cc70, LoadCorrectPageAfterOnlineLdb);
 
-}//namespace KO
-}//namespace Pulsar
+}  // namespace KO
+}  // namespace Pulsar

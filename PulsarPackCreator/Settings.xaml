@@ -39,6 +39,7 @@
                     <ComboBoxItem IsSelected="True" Content="Dark Mode"/>
                     <ComboBoxItem Content="Light Mode"/>
                     <ComboBoxItem Content="Space Mode"/>
+					<ComboBoxItem Content="Moonview Mode"/>
                 </ComboBox>
 
 

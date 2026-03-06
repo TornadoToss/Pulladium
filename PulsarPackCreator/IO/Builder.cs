@@ -68,7 +68,7 @@ namespace Pulsar_Pack_Creator.IO
             if (parameters.modFolderName == null || parameters.modFolderName == "") return Result.NoModName;
             if (parameters.wiimmfiRegion == -1) return Result.NoWiimmfi;
 
-            if (Directory.Exists(modFolder))
+            if (Directory.Exists(modFolder) && buildParams != BuildParams.ConfigOnly)
             {
                 try { Directory.Delete(modFolder, true); }
                 catch { return Result.AlreadyInUse; }
@@ -457,12 +457,13 @@ namespace Pulsar_Pack_Creator.IO
             infoSection.info.trackBlocking = parameters.trackBlocking;
             infoSection.info.hasTTTrophies = Convert.ToByte(parameters.hasTTTrophies);
             infoSection.info.has200cc = Convert.ToByte(parameters.has200cc);
-            infoSection.info.hasUMTs = Convert.ToByte(parameters.hasUMTs);
+			infoSection.info.hasLegacy200ccMaxSpeed = Convert.ToByte(parameters.hasLegacy200ccMaxSpeed);
+			infoSection.info.hasUMTs = Convert.ToByte(parameters.hasUMTs);
             infoSection.info.hasFeather = Convert.ToByte(parameters.hasFeather);
             infoSection.info.hasMegaTC = Convert.ToByte(parameters.hasMegaTC);
             infoSection.info.cupIconCount = Math.Min((ushort)100, ctsCupCount);
             infoSection.info.chooseNextTrackTimer = (byte)(parameters.chooseNextTrackTimer);
-            infoSection.info.reservedSpace = new byte[40];
+            infoSection.info.reservedSpace = new byte[39];
 
             infoSection.header.size = (uint)Marshal.SizeOf(infoSection);
 

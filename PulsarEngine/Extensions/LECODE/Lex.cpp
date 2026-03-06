@@ -29,8 +29,8 @@ const KMPHeader* LexMgr::LoadLEXAndKMP(u32, const char* kmpString) {
             if(header->magic == LEXHeader::goodMagic && header->majorVersion == 1) {
 
                 LEXSectionHeader* section = reinterpret_cast<LEXSectionHeader*>(reinterpret_cast<u8*>(header) + header->offsetToFirstSection);
-                u8* data = reinterpret_cast<u8*>(section) + sizeof(LEXSectionHeader);
                 while(section->magic != 0) {
+                    u8* data = reinterpret_cast<u8*>(section) + sizeof(LEXSectionHeader);
                     switch(section->magic) {
                         case SET1::magic:
                             self.set1 = reinterpret_cast<SET1*>(section);
@@ -123,7 +123,7 @@ u32 ApplySET1TimeLimit(const Racedata& racedata) {
     asm(lwz r5, 0x0004 (r31)); //default, make this volatile if another func is called
     return hiTime;
 }
-kmCall(0x8053f3b8, ApplySET1TimeLimit);
+//kmCall(0x8053f3b8, ApplySET1TimeLimit);
 
 //If extracting, position will be obj->position, if filling, position will be a copy of obj->position which may have been divided by the SET1 factors
 void* ModifyItemPos(s16* packet) {

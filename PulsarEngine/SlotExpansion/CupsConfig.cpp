@@ -132,15 +132,14 @@ void CupsConfig::ToggleCTs(bool enabled) {
     if (!enabled) {
         if (lastSelectedCup > 7) {
             hasRegs = true;
-            selectedCourse = PULSARID_FIRSTREG;
-            lastSelectedCup = PULSARCUPID_FIRSTREG; //CT cup -> regs
-            lastSelectedCupButtonIdx = 0;
         }
         count = 0;
+        selectedCourse = PULSARID_FIRSTREG;
+        lastSelectedCup = PULSARCUPID_FIRSTREG;
+        lastSelectedCupButtonIdx = 0;
     }
     else {
         count = definedCTsCupCount;
-        hasRegs = regsMode > 0;
     }
     ctsCupCount = count;
 }

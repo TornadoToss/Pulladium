@@ -27,7 +27,7 @@ void DisplayCorrectLap(AnmTexPatHolder* texPat) { //This Anm is held by a ModelD
 kmCall(0x80723d70, DisplayCorrectLap);
 
 
-//kmWrite32(0x808b5cd8, 0x3F800000); //change 100cc speed ratio to 1.0    
+kmWrite32(0x808b5cd8, 0x3F800000); //change 100cc speed ratio to 1.0    
 Kart::Stats* ApplySpeedModifier(KartId kartId, CharacterId characterId) {
     union SpeedModConv {
         float speedMod;
@@ -38,7 +38,14 @@ Kart::Stats* ApplySpeedModifier(KartId kartId, CharacterId characterId) {
     SpeedModConv speedModConv;
     speedModConv.kmpValue = (KMP::Manager::sInstance->stgiSection->holdersArray[0]->raw->speedMod << 16);
     if(speedModConv.speedMod == 0.0f) speedModConv.speedMod = 1.0f;
-    float factor = System::sInstance->IsContext(PULSAR_200) ? speedFactor : 1.0f;
+
+    float factor = 1.0f;
+    if (System::sInstance->IsContext(PULSAR_200)) {
+        if (System::sInstance->IsContext(PULSAR_LEGACY_200_MAX_SPEED)) {
+            factor = legacySpeedFactor * 0.8f;
+        }
+        else factor = speedFactor;
+    }
     factor *= speedModConv.speedMod;
 
     Item::greenShellSpeed = 105.0f * factor;

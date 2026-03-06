@@ -21,7 +21,8 @@ namespace Pulsar_Pack_Creator
         {
             Dark_Mode,
             Light_Mode,
-            Space_Mode
+            Space_Mode,
+            Moonview_Mode
         }
 
         public SettingsWindow()
@@ -289,6 +290,12 @@ namespace Pulsar_Pack_Creator
                 image.EndInit();
                 Application.Current.Resources["imageBg"] = image;
             }
+            else if (mode == ColorMode.Moonview_Mode)
+            {
+				image.UriSource = new Uri("pack://application:,,,/Resources/moonview.png");
+				image.EndInit();
+				Application.Current.Resources["imageBg"] = image;
+			}
             else
             {
                 image.UriSource = new Uri("pack://application:,,,/Resources/transparent.png");

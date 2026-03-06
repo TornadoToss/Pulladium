@@ -43,10 +43,16 @@ kmCall(0x80799808, SetStartingItem);
 //From JoshuaMK, ported to C++ by Brawlbox and adapted as a setting
 static int MiiHeads(Racedata* racedata, u32 unused, u32 unused2, u8 id) {
     CharacterId charId = racedata->racesScenario.players[id].characterId;
-    if (System::sInstance->IsContext(PULSAR_MIIHEADS)) {
-        if (charId < MII_M) {
-            if (id == 0) charId = MII_M;
-            else if (RKNet::Controller::sInstance->connectionState != 0) charId = MII_M;
+    bool miiHeadFroom = HOSTSETTING_ALLOW_MIIHEADS_ENABLED;
+    if (RKNet::Controller::sInstance->roomType == RKNet::ROOMTYPE_FROOM_HOST || RKNet::Controller::sInstance->roomType == RKNet::ROOMTYPE_FROOM_NONHOST) {
+        miiHeadFroom = System::sInstance->IsContext(PULSAR_MIIHEADS) ? HOSTSETTING_ALLOW_MIIHEADS_ENABLED : HOSTSETTING_ALLOW_MIIHEADS_DISABLED;
+    }
+    if (Settings::Mgr::Get().GetSettingValue(Settings::SETTINGSTYPE_RACE, SETTINGRACE_RADIO_MII) == RACESETTING_MII_ENABLED) {
+        if (miiHeadFroom == HOSTSETTING_ALLOW_MIIHEADS_ENABLED) {
+            if (charId < MII_M) {
+                if (id == 0) charId = MII_M;
+                else if (RKNet::Controller::sInstance->connectionState != 0) charId = MII_M;
+            }
         }
     }
     return charId;
@@ -133,7 +139,7 @@ const char* ChangeItemWindowPane(ItemId id, u32 itemCount) {
         else if (itemCount == 3) paneName = "feather_3";
         else paneName = "feather";
     }
-    else if (id == THUNDER_CLOUD && megaTC) paneName = "megaTC";
+    else if (id == THUNDER_CLOUD && megaTC && RKNet::Controller::sInstance->roomType != RKNet::ROOMTYPE_VS_WW) paneName = "megaTC";
     else paneName = GetItemIconPaneName(id, itemCount);
     return paneName;
 }

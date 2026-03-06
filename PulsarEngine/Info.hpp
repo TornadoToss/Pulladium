@@ -12,6 +12,7 @@ public:
     inline u32  GetKey() const { return this->roomKey; }
     inline bool HasTrophies() const { return this->hasTTTrophies; }
     inline bool Has200cc() const { return this->has200cc; }
+    inline bool HasLegacy200ccMaxSpeed() const { return this->hasLegacy200ccMaxSpeed; }
     inline bool HasUMTs() const { return this->hasUMTs; }
     inline bool HasFeather() const { return this->hasFeather; }
     inline bool HasMegaTC() const { return this->hasMegaTC; }
@@ -41,7 +42,8 @@ private:
     bool hasMegaTC; //0x18
     u16 cupIconCount; //0x19
     u8 chooseNextTrackTimer; //0x1b
-    u8 reservedSpace[40];
+    bool hasLegacy200ccMaxSpeed; //0x1c
+    u8 reservedSpace[39];
 };
 size_assert(Info, 0x44);
 #pragma pack(pop)

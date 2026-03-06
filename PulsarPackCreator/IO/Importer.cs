@@ -133,6 +133,7 @@ namespace Pulsar_Pack_Creator.IO
             parameters.trackBlocking = info.trackBlocking;
             parameters.hasTTTrophies = info.hasTTTrophies == 1 ? true : false;
             parameters.has200cc = info.has200cc == 1 ? true : false;
+            parameters.hasLegacy200ccMaxSpeed = info.hasLegacy200ccMaxSpeed == 1 ? true : false;
             parameters.hasUMTs = info.hasUMTs == 1 ? true : false;
             parameters.hasFeather = info.hasFeather == 1 ? true : false;
             parameters.hasMegaTC = info.hasMegaTC == 1 ? true : false;
