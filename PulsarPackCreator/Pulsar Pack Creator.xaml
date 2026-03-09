@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
-        Title="Pulladium Pack Creator VERSION" Height="600" Width="1000" Background="{DynamicResource AppBg}"
+        Title="Pulsar Pack Creator VERSION" Height="600" Width="1000" Background="{DynamicResource AppBg}"
         HorizontalAlignment="Center" VerticalAlignment="Center"
         AllowDrop="True"
         Drop="OnDropFile"
@@ -293,15 +293,15 @@
 						<TextBlock x:Name="CCMirLabel" Margin="-50,0,0,0" Text="% Mirror" FontSize="14" Foreground="{DynamicResource fg}" Height="21"/>
 					</StackPanel>
 
-					<TextBlock Text="Wiimmfi Region" Grid.Row="3" Grid.Column="1" Margin="1,6,0,0" HorizontalAlignment="Left" Style="{StaticResource Blocks}" />
-					<TextBox x:Name="Wiimmfi" Grid.Row="3" Grid.Column="1" Margin="108,3,40,103" Width="50" Height="23" Text="" TextChanged="OnWiimmfiRegionChange" DataObject.Pasting="NumbersOnlyPasting" PreviewTextInput="NumbersOnlyBox"  Style="{StaticResource Boxes}"  />
+					<TextBlock Text="NinjaWFC Region" Grid.Row="3" Grid.Column="1" Margin="1,6,0,0" HorizontalAlignment="Left" Style="{StaticResource Blocks}" />
+					<TextBox x:Name="Wiimmfi" Grid.Row="3" Grid.Column="1" Margin="119,4,0,0" Width="50" Height="23" Text="" TextChanged="OnWiimmfiRegionChange" DataObject.Pasting="NumbersOnlyPasting" PreviewTextInput="NumbersOnlyBox"  Style="{StaticResource Boxes}" HorizontalAlignment="Left" VerticalAlignment="Top"  />
 
 					<TextBlock Text="Track Blocking" Grid.Row="3" Grid.Column="1" Margin="1,33,0,0" HorizontalAlignment="Left" Style="{StaticResource Blocks}"/>
-					<ComboBox x:Name="TrackBlocking" Grid.Row="3" Grid.Column="1" Margin="110,32,0,0" Width="43" Height="19" HorizontalContentAlignment="Center" SelectionChanged="OnTrackBlockingChange" Style="{StaticResource ComboBoxes}" HorizontalAlignment="Left"/>
+					<ComboBox x:Name="TrackBlocking" Grid.Row="3" Grid.Column="1" Margin="123,33,0,0" Width="43" Height="19" HorizontalContentAlignment="Center" SelectionChanged="OnTrackBlockingChange" Style="{StaticResource ComboBoxes}" HorizontalAlignment="Left"/>
 
-					<TextBox   x:Name="HAWTimer" Text="10" Grid.Row="1" Grid.Column="4" Width="40" Margin="52,63,113,86" Height="24" TextChanged="OnHAWTimerChange" DataObject.Pasting="NumbersOnlyPasting" PreviewTextInput="NumbersOnlyBox" Style="{StaticResource Boxes}" />
+					<TextBox   x:Name="HAWTimer" Text="10" Grid.Row="1" Grid.Column="4" Width="40" Margin="52,55,0,0" Height="24" TextChanged="OnHAWTimerChange" DataObject.Pasting="NumbersOnlyPasting" PreviewTextInput="NumbersOnlyBox" Style="{StaticResource Boxes}" HorizontalAlignment="Left" VerticalAlignment="Top" />
 					<TextBlock Text="Host Always Wins Timer" Grid.Row="1" Grid.Column="4" Margin="0,33,0,0" Style="{StaticResource Blocks}" />
-					<TextBlock Text="seconds" Margin="103,65,32,87" FontSize="14" Foreground="{DynamicResource fg}" Height="21" Grid.Column="4" Grid.Row="1"/>
+					<TextBlock Text="seconds" Margin="103,57,0,0" FontSize="14" Foreground="{DynamicResource fg}" Height="21" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
 					<DatePicker xml:lang="en-GB" x:Name="dateSelector" Language="en-GB" Foreground="{DynamicResource fg}" SelectedDateChanged="OnDateChange"
                                    Grid.Row="1" Grid.Column="3" Width="185" >
@@ -313,7 +313,7 @@
 							</Style>
 						</DatePicker.Resources>
 					</DatePicker>
-					<Button x:Name="EditBMG" Grid.Column="4" VerticalAlignment="Top" Content="Edit Pulladium BMGs" FontSize="14" Height="25" Click="OnEditPulsarBMGsClick" Margin="29,72,28,0" Grid.RowSpan="2"/>
+					<Button x:Name="EditBMG" Grid.Column="4" VerticalAlignment="Top" Content="Edit Pulsar BMGs" FontSize="14" Height="25" Click="OnEditPulsarBMGsClick" Margin="29,72,28,0" Grid.RowSpan="2"/>
 
 
 

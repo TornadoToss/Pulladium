@@ -32,10 +32,9 @@
     
     <Border BorderBrush="Black" BorderThickness="2">
         <Grid Background="{StaticResource settingsBg}">
-            <StackPanel Orientation = "Vertical" HorizontalAlignment="Left" Margin="5,52,5,38">
-                <CheckBox x:Name="AutoUpdater"   Checked="OnAutoUpdateToggle" Unchecked="OnAutoUpdateToggle" Content="Check for updates on startup" Style="{StaticResource CheckBoxes}"/>
-                <CheckBox x:Name="ExitRemindBox" Checked="OnExitRemindToggle" Unchecked="OnExitRemindToggle" Content="Ask before closing"           Style="{StaticResource CheckBoxes}"/>
-                <ComboBox x:Name="ColorModeBox" SelectionChanged="OnColorModeChange" Style="{StaticResource ComboBoxes}">
+			<StackPanel Orientation = "Vertical" HorizontalAlignment="Left" Margin="5,52,5,38">
+				<CheckBox x:Name="ExitRemindBox" Checked="OnExitRemindToggle" Unchecked="OnExitRemindToggle" Content="Ask before closing"           Style="{StaticResource CheckBoxes}"/>
+                <ComboBox x:Name="ColorModeBox" SelectionChanged="OnColorModeChange" Style="{StaticResource ComboBoxes}" Margin="0,5,0,0" HorizontalAlignment="Left">
                     <ComboBoxItem IsSelected="True" Content="Dark Mode"/>
                     <ComboBoxItem Content="Light Mode"/>
                     <ComboBoxItem Content="Space Mode"/>

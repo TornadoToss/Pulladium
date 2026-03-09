@@ -16,7 +16,7 @@ public:
     inline bool HasUMTs() const { return this->hasUMTs; }
     inline bool HasFeather() const { return this->hasFeather; }
     inline bool HasMegaTC() const { return this->hasMegaTC; }
-    inline u32 GetWiimmfiRegion() const { return this->wiimmfiRegion; }
+    inline u32 GetWiilinkRegion() const { return this->wiilinkRegion; }
     inline u32 GetProb100() const { return this->prob100cc; }
     inline u32 GetProb150() const { return this->prob150cc; }
     inline u32 GetTrackBlocking() const { return  this->trackBlocking; }
@@ -33,7 +33,7 @@ private:
     u32 roomKey; //0x0 transmitted to other players
     u32 prob100cc; //0x4
     u32 prob150cc; //0x8
-    u32 wiimmfiRegion; //0xc
+    u32 wiilinkRegion; //0xc
     u32 trackBlocking; //0x10
     bool hasTTTrophies; //0x14
     bool has200cc; //0x15

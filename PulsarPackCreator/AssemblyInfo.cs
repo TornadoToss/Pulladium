@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Create your Pulsar distributions")]
 [assembly: AssemblyDescription("Create your Pulsar-based Mario Kart Wii CT Distributions")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Melg")]
+[assembly: AssemblyCompany("Melg, Erythtini")]
 [assembly: AssemblyProduct("Pulsar Pack Creator")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]

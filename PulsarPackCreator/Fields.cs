@@ -81,7 +81,7 @@ namespace Pulsar_Pack_Creator
                 new UIElement[]{ File4, Name4, Author4, Version4, Slot4, Music4, Variants4}};
 
             string version = (Assembly.GetExecutingAssembly().GetCustomAttribute(typeof(AssemblyInformationalVersionAttribute)) as AssemblyInformationalVersionAttribute).InformationalVersion.ToString();
-            Title = "Pulladium Pack Creator " + version;
+            Title = "Pulsar Pack Creator " + version;
 
             TrackBlocking.ItemsSource = blockingValues;
             TrackBlocking.SelectedValue = blockingValues[0];
@@ -148,7 +148,7 @@ namespace Pulsar_Pack_Creator
             Directory.CreateDirectory($"input/{ttModeFolders[3, 1]}");
             extractTPL = IO.IOBase.ExtractDefaultTPLs();
 
-            bool checkUpdates = Properties.Settings.Default.AutoUpdate;
+            //bool checkUpdates = Properties.Settings.Default.AutoUpdate;
 
             string[] args = Environment.GetCommandLineArgs();
             if (args.Length > 1)
@@ -163,9 +163,8 @@ namespace Pulsar_Pack_Creator
                     }
                     else if (args[1].Contains("Updated"))
                     {
-                        checkUpdates = false;
+                        //checkUpdates = false;
                         SettingsWindow.DisplayChangelog(args[3]);
-
                     }
                 }
                 catch (Exception ex)
@@ -174,10 +173,10 @@ namespace Pulsar_Pack_Creator
                 }
             }
 
-            if (checkUpdates)
-            {
-                SettingsWindow.TryUpdate();
-            }
+            //if (checkUpdates)
+            //{
+            //    SettingsWindow.TryUpdate();
+            //}
 
             if (!Directory.Exists("input"))
             {

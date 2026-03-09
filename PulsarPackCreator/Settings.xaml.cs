@@ -32,7 +32,7 @@ namespace Pulsar_Pack_Creator
 
         public void Load()
         {
-            AutoUpdater.IsChecked = Pulsar_Pack_Creator.Properties.Settings.Default.AutoUpdate;
+            //AutoUpdater.IsChecked = Pulsar_Pack_Creator.Properties.Settings.Default.AutoUpdate;
             ExitRemindBox.IsChecked = Pulsar_Pack_Creator.Properties.Settings.Default.ExitRemind;
             ColorModeBox.SelectedIndex = Pulsar_Pack_Creator.Properties.Settings.Default.ColorMode;
             Show();
@@ -47,7 +47,7 @@ namespace Pulsar_Pack_Creator
         {
             if ((sender as CheckBox).IsKeyboardFocused)
             {
-                Pulsar_Pack_Creator.Properties.Settings.Default.AutoUpdate = !Pulsar_Pack_Creator.Properties.Settings.Default.AutoUpdate;
+                //Pulsar_Pack_Creator.Properties.Settings.Default.AutoUpdate = !Pulsar_Pack_Creator.Properties.Settings.Default.AutoUpdate;
             }
         }
 
@@ -60,9 +60,11 @@ namespace Pulsar_Pack_Creator
 
         private void OnUpdateClick(object sender, RoutedEventArgs e)
         {
-            bool hasUpdate = TryUpdate();
-            if (!hasUpdate) MsgWindow.Show("You are already using the latest version.", this);
-        }
+            Process.Start(new ProcessStartInfo("https://github.com/TornadoToss/Pulladium/releases") { UseShellExecute = true });
+
+			//bool hasUpdate = TryUpdate();
+			//if (!hasUpdate) MsgWindow.Show("You are already using the latest version.", this);
+		}
 
         private void OnSaveSettingsClick(object sender, RoutedEventArgs e)
         {

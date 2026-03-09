@@ -1872,5 +1872,142 @@ IsBattle__Fv = 0x80860a8c
 GetItemIconPaneName__F6ItemIdUi = 0x80860af0
 TimerToTextInfo__FRC5TimerRQ24Text4Info = 0x808608e4
 
+GetMiiCharacterId__FRC3Mii = 0x80831af4
+GetCharacterIconPaneName__F11CharacterId = 0x80860acc
+SetButtonColours__Q223CtrlMenuCharacterSelect12ButtonDriverFUi = 0x807e4130
+OnButtonDriverSelect__Q25Pages15CharacterSelectFPQ223CtrlMenuCharacterSelect12ButtonDriverUiUc = 0x8083e5f4
+IsKartUnlocked = 0x8081cfb4
+IsKartUnlocked__F6KartIdUi = 0x8081cfb4
+__ptmf_test = 0x800213e4
+Real_DWCi_Auth_SendRequest = 0x800ed6ec
+s_auth_work = 0x8038633c
+s_auth_error = 0x802f1cB8
+NHTTPDestroyResponse__5NHTTPFPv = 0x801d92f8
+NHTTPSendRequestAsync__5NHTTPFPv = 0x801d925c
+NHTTPCreateRequest__5NHTTPFPCciPvUiPvPv = 0x801d8ff8
+sprintf = 0x80011a2c
 
+HasPlayerFinished__12CtrlRaceTimeFUc = 0x807f82bc
+WWFC_CUSTOM_REGION = 0x80005efc
+Blurry = 0x8016fba0
+VR_Address= 0x809C2108
+UltraUncutHook = 0x80001201
+FPSPatchHook = 0x80001202
+ItemRainOnlineFixHook = 0x8000120A
+RemoveBloom = 0x802575DF
+RemoveBackgroundBlur = 0x80258184
+GetCameraParamBin__Q24Kart4LinkFUiUi = 0x805927d4
+exhaustPipeboost = 0x809c21d0
 
+sInstance__Q25RKNet11USERHandler = 0x809c2108
+saveFcAndCountryHookExit__Fv = 0x806513e4
+saveFcAndCountryInLiveHookExit__Fv = 0x8060a2b4
+displayFcAndCountryHookExit__Fv = 0x807f0050
+displayFcAndCountryInResultFillNameHookExit__Fv = 0x807f5300
+displayFcAndCountryInResultFillTimeHookExit__Fv = 0x807f5968
+MD5Digest__FPCUcUiPUc = 0x800f0e08
+MD5Digest = 0x800f0e08
+MD5Update = 0x800f0264
+PicturePaneExists__15LayoutUIControlFPCc = 0x8063e328
+current_time = 0x800f24c8
+
+Update__8ElineMgrFv = 0x8052d888
+UpdateFromPrevRace__16RacedataScenarioFv = 0x8052f1e0
+
+IsConnectedToAnyone__Q25RKNet10ControllerCFv = 0x80656f00
+GetOwnSelectId__Q25RKNet13SELECTHandlerCFv = 0x80660470
+KillFromOtherCollision__Q24Item3ObjFb = 0x807a6560
+UpdateTotalItemCountMinus30__Q24Item7ManagerFv = 0x80799a50
+GetBodyMatCol1__Q24Kart4LinkCFR4Vec3 = 0x80590c6c
+Sqrt__Q23EGG4MathFf = 0x8022f80c
+
+gpiAppendStringToBuffer__2GPFPPQ22GP10ConnectionPQ22GP7IBufferPCc = 0x800ff014
+
+#VotePage
+__ct__Q25Pages4VoteFv = 0x80642f90
+__dt__Q25Pages4VoteFv = 0x806430bc
+BeforeControlUpdate__Q25Pages4VoteFv = 0x806437e8
+#BeforeControlUpdate__Q36Pulsar2UI13SettingsPanelFv =
+GetRuntimeTypeInfo__Q25Pages4VoteCFv = 0x8064464c
+OnInit__Q25Pages4VoteFv = 0x80643168
+OnDispose__Q25Pages4VoteFv = 0x806433c8
+BeforeEntranceAnimations__Q25Pages4VoteFv = 0x806433cc
+BeforeExitAnimations__Q25Pages4VoteFv = 0x80643e98
+GetNextPage__Q25Pages4VoteCFv = 0x80643f18
+GetCurrentContext__2OSFv = 0x801a1ecc
+OnButtonClick__Q25Pages2VRFR10PushButtonUi = 0x8064ae6c
+HandleDeselect__18RadioButtonControlFUiUi = 0x80606434
+HandleSelect__18RadioButtonControlFUiUi = 0x806062d8
+HandleClick__18RadioButtonControlFUiUi = 0x80606620
+HandleDeselect__13UpDownControlFUiUi = 0x8063f7c4
+OnActivate__Q36Pulsar2UI5ExpVRFv = 0x8064a84c
+
+HandleDeselect__13UpDownControlFUiUi = 0x8063f7c4
+
+OnModeButtonSelect__Q36Pulsar2UI13ExpWFCModeSelFR10PushButtonUi = 0x8064c718
+Sin__Q23EGG4MathFf = 0x8022f860
+Cos__Q23EGG4MathFf = 0x8022f86c
+Spawn__Q24Item9ObjHolderFUiP7ItemObjUcRC4Vec3b = 0x80795e04
+sInstance__13EntityManager = 0x809c2ef0
+CreateItemDirect__Q24Item7ManagerF6ItemIdPC4Vec3P4Vec3Ui = 0x80799fbc
+GenerateItemDirect__Q24Item7ManagerFUiP4Vec3 = 0x8079a12c
+Init__Q24Item3ObjFUiUs9ItemObjId = 0x8079e224
+Spawn__Q24Item3ObjF9ItemObjIdUcRC4Vec3b = 0x8079e550
+AddShootEVENTEntry__Q24Item3ObjF9ItemObjId = 0x8079c2e4
+Set__Q24Item3ObjF9ItemObjId = 0x8079e5f4
+LoadItemLight__Q24Item3ObjFv = 0x807a0380
+UpdateModelFromVecs__Q24Item3ObjFP5Mtx34 = 0x807a07b8
+RegisterEntity__Q24Item3ObjFb = 0x8079ee30
+LoadGraphicsDefault__Q24Item3ObjFPCcPCcPCcPQ34Item3Obj8AnmParam = 0x8079ffa4
+GetPosition__Q24Kart4LinkCFv = 0x8059020c
+IsThereCapacityForItem__Q24Item7ManagerF6ItemId = 0x80799be8
+UseMushroom__Q24Item6PlayerFv = 0x807a9d3c
+UseStar__Q24Item6PlayerFv = 0x807b706c
+UsePow__Q24Item6PlayerFv = 0x807b1b2c
+UseBullet__Q24Item6PlayerFv = 0x807a9afc
+UseThunder__Q24Item6PlayerFv = 0x807b7b7c
+KillFromPlayerCollision__Q24Item3ObjFbUc = 0x807a6614
+AddHitFreeEVENTEntry__Q24Item3ObjF9ItemObjIdUiUcUs = 0x8079c3c4
+KillObj__Q24Item3ObjFUi = 0x807a6328
+Update__16RaceTimerMgrBaseFv = 0x805336a0
+Update__12RaceTimerMgrFv = 0x80535864
+SetActive__5TimerFb = 0x80544310
+__ct__Q24Item3ObjFv = 0x8079d8bc
+InitItemDirects__Q24Item7ManagerFv = 0x80799e50
+Init__Q24Item7ManagerFv = 0x80799794
+freeAll__Q23EGG7ExpHeapFv = 0x80226ebc
+IsConnectedToAnyone__Q25RKNet10ControllerCFv = 0x80656f00
+GetConnectionState__Q25RKNet10ControllerCFv = 0x80658148
+IsIdle__Q25RKNet10ControllerFv = 0x80656e44
+SetPlayerITEMItem__Q25RKNet9PacketMgrFUc6ItemId = 0x8065471c
+UpdateModelPositions__Q24Item9ObjHolderFv = 0x80796b30
+AddEVENTEntry__Q25RKNet9PacketMgrF9ItemObjIdQ25RKNet11EVENTActionPvUi = 0x8065474c
+sqrt__Fd = 0x8022f80c
+GetColumnByIdx__5Mtx34FUi = 0x80537b80
+cos__Fd = 0x8022f86c
+sin__Fd = 0x8022f860
+GetBodyMatCol2__Q24Kart4LinkCFv = 0x80590ce4
+CreateExpHeapEx__3MEMFPvUiUs = 0x80198ca8
+FindContainHeap__3MEMFPCv = 0x80198658
+UpdateTotalItemCountMinus30__Q24Item7ManagerFv = 0x80799a50
+SetItemAndMode__Q25RKNet11ITEMHandlerFUcUc6ItemId = 0x8065cfc4
+GetTotalFreeSizeForExpHeap__3MEMFPQ23MEM9iHeapHead = 0x80199104
+GetAllocatableSizeForExpHeapEx__3MEMFPQ23MEM9iHeapHeadi = 0x80199180
+
+Create__Q23EGG7ExpHeapFPviUs = 0x80226a1c
+GetTotalItemCount__Q24Item9ObjHolderCFv = 0x807974ac
+Sqrt__Q23EGG4MathFf = 0x8022f80c
+PrepareButton__Q25Pages5YesNoFUiUiPQ24Text4InfoUiRC39PtmfHolder_2A<4Page,v,Ui,R10PushButton> = 0x80652604
+IsLocal__Q24Kart4LinkCFv = 0x80590650
+GetCupNameBMGId__FUi = 0x80833638
+
+#IDK
+current__Q23EGG4Heap = 0x80386EA0
+RegisterItem__Q24Item7ManagerFPQ24Item3Obj = 0x807A51C4
+
+SetupOnlineVSProbabilities__Q24Item12ItemSlotDataFv = 0x807bbd60
+SetupVSProbabilities__Q24Item12ItemSlotDataFv = 0x807bbef8
+PostProcessVSTable__Q24Item12ItemSlotDataFPQ34Item12ItemSlotData13Probabilities = 0x807bad20
+ptr_playerBase = 0x809C18F8
+fun_playSound = 0x8071497C
+ptr_menuPageOrSomething = 0x809C2850

@@ -38,21 +38,15 @@ Kart::Stats* ApplySpeedModifier(KartId kartId, CharacterId characterId) {
     speedModConv.kmpValue = (KMP::Manager::sInstance->stgiSection->holdersArray[0]->raw->speedMod << 16);
     if(speedModConv.speedMod == 0.0f) speedModConv.speedMod = 1.0f;
 
-    OS::Report("Factor calc: ");
     float factor = 1.0f;
     if (System::sInstance->IsContext(PULSAR_200)) {
         if (System::sInstance->IsContext(PULSAR_LEGACY_200_MAX_SPEED)) {
             factor = legacySpeedFactor;
-            OS::Report("LEGACY enabled");
         }
         else {
-            OS::Report("NORMAL enabled");
             Kart::speedRatioCC[1] = 1.0f; //change 100cc speed ratio to 1.0
             factor = speedFactor;
         }
-    }
-    else {
-        OS::Report("No 200cc");
     }
     factor *= speedModConv.speedMod;
 

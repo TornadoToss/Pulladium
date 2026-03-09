@@ -27,6 +27,17 @@ struct Req {};
 struct Res {};
 BOOL AddPostDataAscii(Req* req, char* label, char* value); //801d9198
 int GetBodyAll(Res* res, char** value); //801d937c
+
+s32 NHTTPStartup(void* alloc, void* free, u32 param_3);
+
+void* NHTTPCreateRequest(
+    const char* url, int param_2, void* buffer, u32 length, void* callback,
+    void* userdata
+);
+
+s32 NHTTPSendRequestAsync(void* request);
+
+s32 NHTTPDestroyResponse(void* response);
 } //namespace NHTTP
 #endif
 
