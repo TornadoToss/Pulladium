@@ -9,45 +9,46 @@
         Title="Program Settings" Height="200" Width="320" Background="{DynamicResource AppBg}"
 
         HorizontalAlignment="Center" VerticalAlignment="Center">
-    <Window.Resources>
-        <Style x:Key="ColorMode" TargetType="Control">
-            <Setter Property="Background"               Value="{DynamicResource bg}"/>
-            <Setter Property="Foreground"               Value="{DynamicResource fg}"/>
-        </Style>
-        <Style BasedOn="{StaticResource ColorMode}" x:Key="CheckBoxes" TargetType="CheckBox">
-            <Setter Property="FontSize"             Value="13"/>
-        </Style>
-        <Style x:Key="ComboBoxes" TargetType="ComboBox">
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment"   Value="Top"/>
-            <Setter Property="Width"               Value="100"/>
-            <Setter Property="Margin"              Value="-85,5,0,0"/>
+	<Window.Resources>
+		<Style x:Key="ColorMode" TargetType="Control">
+			<Setter Property="Background"               Value="{DynamicResource bg}"/>
+			<Setter Property="Foreground"               Value="{DynamicResource fg}"/>
+		</Style>
+		<Style BasedOn="{StaticResource ColorMode}" x:Key="CheckBoxes" TargetType="CheckBox">
+			<Setter Property="FontSize"             Value="13"/>
+		</Style>
+		<Style x:Key="ComboBoxes" TargetType="ComboBox">
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="VerticalAlignment"   Value="Top"/>
+			<Setter Property="Width"               Value="100"/>
+			<Setter Property="Margin"              Value="-85,5,0,0"/>
 
-            <Setter Property="Foreground"          Value="{DynamicResource fg}"/>
-            <Setter Property="Template"            Value="{DynamicResource CustomComboBox}"/>
-        </Style>
-        <ImageBrush x:Key="settingsBg" ImageSource="{DynamicResource imageBg}" />
+			<Setter Property="Foreground"          Value="{DynamicResource fg}"/>
+			<Setter Property="Template"            Value="{DynamicResource CustomComboBox}"/>
+		</Style>
+		<ImageBrush x:Key="settingsBg" ImageSource="{DynamicResource imageBg}" />
 
-    </Window.Resources>
-    
-    <Border BorderBrush="Black" BorderThickness="2">
-        <Grid Background="{StaticResource settingsBg}">
+	</Window.Resources>
+
+	<Border BorderBrush="Black" BorderThickness="2">
+		<Grid Background="{StaticResource settingsBg}">
 			<StackPanel Orientation = "Vertical" HorizontalAlignment="Left" Margin="5,52,5,38">
 				<CheckBox x:Name="ExitRemindBox" Checked="OnExitRemindToggle" Unchecked="OnExitRemindToggle" Content="Ask before closing"           Style="{StaticResource CheckBoxes}"/>
-                <ComboBox x:Name="ColorModeBox" SelectionChanged="OnColorModeChange" Style="{StaticResource ComboBoxes}" Margin="0,5,0,0" HorizontalAlignment="Left">
-                    <ComboBoxItem IsSelected="True" Content="Dark Mode"/>
-                    <ComboBoxItem Content="Light Mode"/>
-                    <ComboBoxItem Content="Space Mode"/>
+				<ComboBox x:Name="ColorModeBox" SelectionChanged="OnColorModeChange" Style="{StaticResource ComboBoxes}" Margin="0,5,0,0" HorizontalAlignment="Left">
+					<ComboBoxItem IsSelected="True" Content="Dark Mode"/>
+					<ComboBoxItem Content="Light Mode"/>
+					<ComboBoxItem Content="Space Mode"/>
 					<ComboBoxItem Content="Moonview Mode"/>
-                </ComboBox>
+				</ComboBox>
 
 
-            </StackPanel>
-            
-            <Button x:Name="Updater"      Grid.Row="0" Margin="229,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Content="Update" FontSize="14" Click="OnUpdateClick"/>
-            <Button x:Name="SaveSettings" Grid.Row="0" Height="25" Width="60" Content="Save" Click="OnSaveSettingsClick" Margin="0,100,0,0" />
+			</StackPanel>
 
-        </Grid>
-    </Border>
+			<Button x:Name="Updater"      Grid.Row="0" Margin="229,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Content="Update" FontSize="14" Click="OnUpdateClick"/>
+			<Button x:Name="Changelogs"      Grid.Row="0" Margin="207,75,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" Content="Changelogs" FontSize="14" Click="OnChangelogsClick"/>
+			<Button x:Name="SaveSettings" Grid.Row="0" Height="25" Width="60" Content="Save" Click="OnSaveSettingsClick" Margin="0,100,0,0" />
+
+		</Grid>
+	</Border>
 
 </Window>

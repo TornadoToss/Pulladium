@@ -49,7 +49,32 @@ kmWrite32(0x8078e1f0, 0x2c030001); //compare r3
 //Loads ObjFlow/GeoTable binaries from the track; if they do not exist, gets them from common as per usual
 const void* GetCommonBinary(const ArchiveMgr& root, ArchiveSource source, const char* name) {
     const void* binary = root.GetFile(ARCHIVE_HOLDER_COURSE, name);
-    if(binary == nullptr) binary = root.GetFile(ARCHIVE_HOLDER_COMMON, name);
+
+    // if not in track root, check ./Common/ folder (LE-CODE looks here)
+    // (i don't really get c-strings, sorry if this sucks :p - eryth)
+    if (binary == nullptr) {
+        const char* path = "./Common/";
+        char buffer[32];
+
+        int i = 0;
+        int j = 0;
+
+        while (path[i] != '\0' && i < 255) {
+            buffer[i] = path[i];
+            i++;
+        }
+
+        while (name[j] != '\0' && i < 255) {
+            buffer[i] = name[j];
+            i++;
+            j++;
+        }
+        buffer[i] = '\0';
+        const char* finalpath = buffer;
+        binary = root.GetFile(ARCHIVE_HOLDER_COURSE, finalpath);
+    }
+    // finally, load from common if not present in course
+    if (binary == nullptr) binary = root.GetFile(ARCHIVE_HOLDER_COMMON, name);
     return binary;
 }
 kmCall(0x8082c140, GetCommonBinary); //ObjFlow

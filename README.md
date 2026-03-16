@@ -1,6 +1,34 @@
-# Pulsar
+# Pulladium
 
-Pulsar is a Mario Kart Wii Kamek-Based engine to create CT distributions. It comes with its own [software](../main/PulsarPackCreator/Executable) to aid in building custom distributions, and multiple quality of life features:
+Pulladium is a community maintained fork of Pulsar, a Mario Kart Wii Kamek-Based engine to create CT distributions. It comes with its own [software](../main/PulsarPackCreator/Executable) to aid in building custom distributions, and multiple quality of life features.
+
+The Pulladium fork exists to continue development of Pulsar, and to provide new packs a stable foundation upon which to develop. In its early stages this means more of a focus on bug fixes and quality of life with the pack creator. Later versions will include more engine features. Much is planned!
+
+## New features
+
+- NinjaWFC support (thanks mkwcat, ZPL, Saucy and ImZeraora!)
+- Local multiplayer settings button (thanks Toadette Hack Fan!)
+
+## Fixes from original Pulsar
+
+- Toadette Hack Fan: Fixed issues with tracks containing LEX files causing them to not work properly
+- ZPL: Fixed many bugs and stability issues with KO mode
+- BlueLeopard: Fixed an issue causing 200cc's max speed to be higher than intended. (This behaviour can be reverted to prevent ghost desyncs if preferred)
+- ym: Fixed an issue where the race count in a friend room wouldn't be updated
+- ZPL: Fixed the Mii head setting not working as intended
+- Saucy: Fixed Mega TC showing in the roulette in vanilla worldwides
+- Blazico: Fixed speedometer thousandths digit calculation
+- Saucy: Fixed the vanilla track order when playing worldwides
+- Toadette Hack Fan: Significantly improved NTSC-K support
+- Erythtini: Fixed ObjFlow and GeoHitTables not loading from track szs ./Common/ folder, as it was in LE-CODE (files on .szs root will take priority)
+
+## Developer additions
+
+- Improved versions.txt (thanks Toadette Hack Fan!)
+- Expanded symbols.txt (thanks Toadette Hack Fan!)
+- BuildPulsar.bat now includes the standard CodeWarrior compiler path by default
+
+## Base Pulsar features
 
 Core:
 - Cup select expansion
