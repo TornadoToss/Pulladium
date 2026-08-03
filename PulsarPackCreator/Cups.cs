@@ -274,9 +274,9 @@ namespace Pulsar_Pack_Creator
         private void OnCupCountChange(object sender, TextChangedEventArgs e)
         {
             TextBox box = sender as TextBox;
-            if (box.Text == "" || box.Text == "0")
+            if (box.Text == "")
             {
-                box.Text = "1";
+                box.Text = "0";
                 return;
             }
             ushort newCount = ushort.Parse(box.Text);

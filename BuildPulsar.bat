@@ -17,7 +17,7 @@ SET "PULSAR=.\PulsarEngine"
 
 :: Change this as necessary depending on where you put CodeWarrior
 :: This path should be fine for most Windows users doing a default installation
-SET CC="C:\Program Files (x86)\Freescale\CW for MPC55xx and MPC56xx 2.10\PowerPC_EABI_Tools\Command_Line_Tools\mwcceppc.exe"
+SET CC="mwcceppc.exe"
 
 :: Riivolution Destination (change as necessary)
 SET "RIIVO="
